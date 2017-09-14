@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+      - 'bin/**'
+      - 'vendor/**/*'
+      - 'eventify.gemspec'
+Metrics/LineLength:
+  Max: 80
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+Metrics/MethodLength:
+  Max: 15
