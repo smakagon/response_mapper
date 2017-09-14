@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/smakagon/response_mapper.svg?branch=master)](https://travis-ci.org/smakagon/response_mapper)
+
 # ResponseMapper
 
 ## Installation
