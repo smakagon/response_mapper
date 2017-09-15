@@ -39,6 +39,8 @@ Entity::Order.new(order_attributes)
 `ResponseMapper` maps and symbolizes keys even for nested arrays and hashes.
 It will work for more complex responses.
 
+See [more examples here](https://github.com/smakagon/response_mapper/blob/master/examples/examples.rb).
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -77,6 +79,8 @@ If `mapping` is not a Hash (or empty Hash) - ResponseMapper will raise `Response
 ### symbolize_keys
 `sybmolize_keys` is set to `true` by default.
 If your data contains hashes with strings as keys, they will be symbolized and then mapped.
+
+See [more examples here](https://github.com/smakagon/response_mapper/blob/master/examples/examples.rb).
 
 ## Contributing
 
