@@ -13,10 +13,7 @@ Gem::Specification.new do |spec|
 
   # rubocop:disable LineLength
   spec.summary       = 'Allows to map API response to domain language of your application'
-  spec.description   = 'These days we all deal with many different APIs. \
-                        It can be either third-party services, or our own microservices. \
-                        Not all of them are well-designed and sometimes their attributes named in a really weird way.\
-                        ResponseMapper allows to map attributes from API response to your domain language.'
+  spec.description   = 'These days we all deal with many different APIs. It can be either third-party services, or our own microservices. Not all of them are well-designed and sometimes their attributes named in a really weird way. ResponseMapper allows to map attributes from API response to your domain language.'
   spec.homepage      = 'https://github.com/smakagon/response_mapper'
   spec.license       = 'MIT'
   # rubocop:enable LineLength
