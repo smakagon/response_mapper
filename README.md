@@ -12,10 +12,7 @@ For example:
 
 ```ruby
 response = JSON.parse(response_from_api)
-# {
-#   "order_number" => 10,
-#   "order_items" => [{ order_item_id: 1, item_title: "Book" }]
-# }
+# { "order_number" => 10, "order_items" => [{ order_item_id: 1, item_title: "Book" }] }
 ```
 
 Once we parsed response, all keys are strings. Usually we want to do two things:
@@ -26,16 +23,13 @@ Once we parsed response, all keys are strings. Usually we want to do two things:
 With `ResponseMapper` we can do this:
 
 ```ruby
-mapping = { order_number: :id, order_item_id: id,  order_items: :items, item_title: :title }
+mapping = { order_number: :id, order_item_id: :id,  order_items: :items, item_title: :title }
 order = ResponseMapper.map(data: response, mapping: mapping)
-# {
-#   id: 10,
-#   items: [{ id: 1, title: "Book" }]
-# }
+# { id: 10, items: [{ id: 1, title: "Book" }] }
 ```
 
 Now we have nice Hash with symbolized keys that correspond to attributes of `Order` in our system.
-For example further step could be just wrap this hash into Order entity:
+For example further step could be just wrap this hash into `Order` entity:
 
 ```ruby
 Entity::Order.new(order)

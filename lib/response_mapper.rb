@@ -29,11 +29,11 @@ class ResponseMapper
   attr_reader :data, :mapping, :symbolize_keys
 
   def initialize(data, mapping, symbolize_keys)
-    validate_mapping(mapping)
-
     @data = data
     @mapping = mapping
     @symbolize_keys = symbolize_keys
+
+    validate_mapping
   end
 
   def map_data(data)
@@ -66,7 +66,8 @@ class ResponseMapper
     end
   end
 
-  def validate_mapping(mapping)
+  def validate_mapping
+    # rubocop:disable Style/GuardClause
     if !mapping.is_a?(Hash) || mapping&.empty?
       raise Error, 'Please, provide Hash with mapping, for example: { order_number: :id }' # rubocop:disable LineLength
     end
