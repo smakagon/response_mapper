@@ -66,12 +66,16 @@ If it's not a `Hash` or `Array` - `ResponseMapper` will return `data` as is.
 
 ### mapping
 `mapping` should be a Hash with attributes you want to map:
-` { order_number: :id }` means that you want to map any occurence of `:order_number` in data to `:id`.
 
-If `mapping` is not a `Hash` (or empty `Hash`) - `ResponseMapper` will raise `ResponseMapper::Error`.
+```
+{ order_number: :id }
+```
+
+It will map any occurence of `:order_number` in data to `:id`.
+If `mapping` is not a Hash (or empty Hash) - ResponseMapper will raise `ResponseMapper::Error`.
 
 ### symbolize_keys
-`sybmolize_keys` is `true` by default.
+`sybmolize_keys` is set to `true` by default.
 If your `data` contains hashes with strings as keys, they will be symbolized and then mapped.
 
 ## Contributing
