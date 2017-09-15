@@ -76,7 +76,7 @@ If `mapping` is not a Hash (or empty Hash) - ResponseMapper will raise `Response
 
 ### symbolize_keys
 `sybmolize_keys` is set to `true` by default.
-If your `data` contains hashes with strings as keys, they will be symbolized and then mapped.
+If your data contains hashes with strings as keys, they will be symbolized and then mapped.
 
 ## Contributing
 
