@@ -24,7 +24,8 @@ With `ResponseMapper` we can do this:
 
 ```ruby
 mapping = { order_number: :id, order_item_id: :id,  order_items: :items, item_title: :title }
-order = ResponseMapper.map(data: response, mapping: mapping)
+
+order_attributes = ResponseMapper.map(data: response, mapping: mapping)
 # { id: 10, items: [{ id: 1, title: "Book" }] }
 ```
 
@@ -32,8 +33,11 @@ Now we have nice Hash with symbolized keys that correspond to attributes of `Ord
 For example further step could be just wrap this hash into `Order` entity:
 
 ```ruby
-Entity::Order.new(order)
+Entity::Order.new(order_attributes)
 ```
+
+`ResponseMapper` maps and symbolizes keys even for nested arrays and hashes.
+It will work for more complex responses.
 
 ## Installation
 
@@ -53,7 +57,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`ResponseMapper` provides one class method `.map` which has two required params: `data` and `mapping`.
+There is one optional parameter: `symbolize_keys` which is set to `true` by default.
+
+### data, mapping and symbolize_keys
+
+`data` can be anything, but `ResponseMapper` will try to map it only if it's a `Hash` or `Array`.
+If it's not a `Hash` or `Array` - `ResponseMapper` will return `data` as is.
+
+`mapping` should be a Hash with attributes you want to map:
+` { order_number: :id }` means that you want to map any occurence of `:order_number` in data to `:id`.
+If `mapping` is not a `Hash` (or empty `Hash`) - `ResponseMapper` will raise `ResponseMapper::Error`.
+
+`sybmolize_keys` is `true` by default.
+If your `data` contains hashes with strings as keys, they will be symbolized and then mapped.
 
 ## Contributing
 
