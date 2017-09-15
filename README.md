@@ -6,7 +6,7 @@ These days we all deal with many different APIs.
 It can be either third-party services, or our own microservices.
 Not all of them are well-designed and sometimes their attributes named in a really weird way.
 
-`ResponseMapper` allows to map weird attributes from API response to your domain language.
+`ResponseMapper` allows to map attributes from API response to your domain language.
 
 For example:
 
