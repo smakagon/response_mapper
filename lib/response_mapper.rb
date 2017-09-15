@@ -12,7 +12,7 @@
 # { id: 1, items: [1,2,3] }
 #
 class ResponseMapper
-  VERSION = '0.1.1'
+  VERSION = '0.1.2'
 
   Error = Class.new(StandardError)
 
