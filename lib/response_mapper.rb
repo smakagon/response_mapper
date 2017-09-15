@@ -2,17 +2,17 @@
 
 # Allows to map API response to domain language of your application
 #
-# ResponseMapper.map(
-#   data: { order_number: 1, order_items: [1,2,3] }
-#   mapping: { order_number: :id, order_items: :items }
-# )
+#   ResponseMapper.map(
+#     data: { order_number: 1, order_items: [1,2,3] }
+#     mapping: { order_number: :id, order_items: :items }
+#   )
 #
 # Returns nice Hash with proper naming
-# which could be used to instantiate order entity:
+# which could be used to instantiate Order entity:
 # { id: 1, items: [1,2,3] }
 #
 class ResponseMapper
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 
   Error = Class.new(StandardError)
 
