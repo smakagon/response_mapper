@@ -10,12 +10,12 @@ These days we all deal with many different APIs; It can be either third-party se
 { "orderNumber" => 10, "orderItems" => [{ "orderItemId" 1, "itemTitle" "Book" }] }
 ```
 
-### An example of the above API response after  `ResponseMapper`
+### An example of the above API response after ResponseMapper:
 ```ruby
 { id: 10, items: [{ id: 1, title: "Book" }] }
 ```
 
-## What does `ResponseMapper` Do?
+## What does ResponseMapper Do?
 Using the example above let’s look at a response we may get from a 3rd party API:
 ```ruby
 response = JSON.parse(response_from_api)
@@ -26,7 +26,7 @@ response = JSON.parse(response_from_api)
 1. Map response, so we can easily instantiate entity from response.
 2. Symbolize keys to keep things consistent.
 
-### With `ResponseMapper` we can do this:
+### With ResponseMapper we can do this:
 
 ```ruby
 mapping = { orderNumber: :id, orderItems: :items, orderItemId: :id, itemTitle: :title }
@@ -92,7 +92,7 @@ If your data contains hashes with strings as keys, they will be symbolized and t
 
 See [more examples here](https://github.com/smakagon/response_mapper/blob/master/examples/examples.rb).
 
-Read [article](http://rubyblog.pro/2017/09/how-to-protect-naming-conventions-when-working-with-microservices) on how `ResponseMapper` can help to protect naming conventions when working with microservices or third-party API.
+If you want to learn more, read an [article](http://rubyblog.pro/2017/09/how-to-protect-naming-conventions-when-working-with-microservices) on how `ResponseMapper` can help to protect naming conventions when working with microservices or third-party API.
 
 ## Contributing
 
