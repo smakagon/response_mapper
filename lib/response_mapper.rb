@@ -12,7 +12,7 @@
 # { id: 1, items: [1,2,3] }
 #
 class ResponseMapper
-  VERSION = '0.1.2'
+  VERSION = '0.1.3'
 
   Error = Class.new(StandardError)
 
@@ -67,9 +67,9 @@ class ResponseMapper
   end
 
   def validate_mapping
-    # rubocop:disable Style/GuardClause
-    if !mapping.is_a?(Hash) || mapping&.empty?
-      raise Error, 'Please, provide Hash with mapping, for example: { order_number: :id }' # rubocop:disable LineLength
-    end
+    message = 'Please, provide Hash with mapping, for example: { order_number: :id }' # rubocop:disable LineLength
+    raise Error, message unless mapping.is_a?(Hash)
+
+    raise Error, message if mapping.empty?
   end
 end
